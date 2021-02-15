@@ -24,6 +24,7 @@ public class Controlador {
     GnomeSort gnomeSort = new GnomeSort();
     MergeSort mergeSort = new MergeSort();
     QuickSort quickSort = new QuickSort();
+    BubbleSort bubbleSort = new BubbleSort();
 
     Controlador() {
 
@@ -56,6 +57,11 @@ public class Controlador {
             } else if (opcion == 2) {
                 // Ordenar array de numeros desordenados
 
+                if (numeros == null) {
+                    generarNumerosAleatorios();
+                    guardarNumerosArchivo();
+                }
+
                 leerArchivoNumeros();
 
                 print("\n :: ORDENAR NUMEROS::");
@@ -68,29 +74,42 @@ public class Controlador {
                 int opcionAlgoritmo = sc.nextInt();
 
                 if (opcionAlgoritmo == 1) { // Gnome sort
-
+                    printArray(numeros, "original");
                     numeros = gnomeSort.ordenar(numeros);
+                    printArray(numeros, "ordenado");
+
                     guardarNumerosArchivo();
 
                     print("[OK] Se han ordenado los numeros con Gnome sort");
 
                 } else if (opcionAlgoritmo == 2) { // merge sort
-
+                    printArray(numeros, "original");
                     numeros = mergeSort.ordenar(numeros);
+                    printArray(numeros, "ordenado");
+
                     guardarNumerosArchivo();
 
                     print("[OK] Se han ordenado los numeros con Merge sort");
 
                 } else if (opcionAlgoritmo == 3) { // Quick sort
-
+                    printArray(numeros, "original");
                     quickSort.ordenar(numeros);
+                    printArray(numeros, "ordenado");
+
                     guardarNumerosArchivo();
 
                     print("[OK] Se han ordenado los numeros con Quick sort");
 
                 } else if (opcionAlgoritmo == 4) { // Radix sort
 
-                } else if (opcionAlgoritmo == 5) { // sort a eleccion
+                } else if (opcionAlgoritmo == 5) { // Bubble sort
+                    printArray(numeros, "original");
+                    bubbleSort.ordenar(numeros);
+                    printArray(numeros, "ordenado");
+
+                    guardarNumerosArchivo();
+
+                    print("[OK] Se han ordenado los numeros con Bubble sort");
 
                 }
 
@@ -110,7 +129,7 @@ public class Controlador {
     // Genera numeros aleatorios y los guarda en un array
     public void generarNumerosAleatorios() {
 
-        int cantidadNumeros = rand.nextInt(30);
+        int cantidadNumeros = rand.nextInt(10);
         numeros = new int[cantidadNumeros];
 
         for (int i = 0; i < cantidadNumeros; i++) {
@@ -190,6 +209,20 @@ public class Controlador {
     // Imprime un mensaje en consola
     public void print(String mensaje) {
         System.out.println(mensaje);
+    }
+
+    // Imprime un array en pantalla
+    public void printArray(int arr[], String txt) {
+        try {
+            int n = arr.length;
+            System.out.print("[-] Array " + txt + " : ");
+            for (int i = 0; i < n; ++i)
+                System.out.print(arr[i] + " - ");
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println("[!] Genere los numeros aleatorios primero");
+        }
+
     }
 
 }
