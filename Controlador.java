@@ -24,6 +24,7 @@ public class Controlador {
     GnomeSort gnomeSort = new GnomeSort();
     MergeSort mergeSort = new MergeSort();
     QuickSort quickSort = new QuickSort();
+    RadixSort radixSort = new RadixSort();
     BubbleSort bubbleSort = new BubbleSort();
 
     Controlador() {
@@ -101,6 +102,10 @@ public class Controlador {
                     print("[OK] Se han ordenado los numeros con Quick sort");
 
                 } else if (opcionAlgoritmo == 4) { // Radix sort
+                    radixSort.sort(numeros, 10);
+                    guardarNumerosArchivo();
+
+                    print("[OK] Se han ordenado los numeros con Radix sort");
 
                 } else if (opcionAlgoritmo == 5) { // Bubble sort
                     printArray(numeros, "original");
