@@ -55,15 +55,15 @@ public class TestSorts {
      * Test de l algotimo de ordenamiento Radix
      */
     // @Test
-    // public void testRadixSort() {
-    // RadixSort radixSort = new RadixSort();
-    // int[] array = { 291, 636, 598, 680, 925, };
-    // int[] arrayOrdenado = radixSort.ordenar(array);
+    public void testRadixSort() {
+        RadixSort radixSort = new RadixSort();
+        int[] array = { 291, 636, 598, 680, 925, };
+        radixSort.sort(array, 10);
 
-    // int[] arrayTest = { 291, 598, 636, 680, 925 };
+        int[] arrayTest = { 291, 598, 636, 680, 925 };
 
-    // assertEquals(Arrays.toString(arrayTest), Arrays.toString(arrayOrdenado));
-    // }
+        assertEquals(Arrays.toString(arrayTest), Arrays.toString(array));
+    }
 
     /*
      * Test de l algotimo de ordenamiento Other
