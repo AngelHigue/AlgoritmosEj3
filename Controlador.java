@@ -134,7 +134,7 @@ public class Controlador {
     // Genera numeros aleatorios y los guarda en un array
     public void generarNumerosAleatorios() {
 
-        int cantidadNumeros = rand.nextInt(10);
+        int cantidadNumeros = rand.nextInt(3000);
         numeros = new int[cantidadNumeros];
 
         for (int i = 0; i < cantidadNumeros; i++) {
