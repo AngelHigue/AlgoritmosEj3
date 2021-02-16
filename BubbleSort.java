@@ -1,17 +1,16 @@
 public class BubbleSort {
-    public int[] ordenar(int[] arr) {
-        int n = arr.length;  
+    public int[] ordenar(int[] arreglo) {
+        int n = arreglo.length;  
         int temp = 0;  
         for(int i=0; i < n; i++){  
             for(int j=1; j < (n-i); j++){  
-                if(arr[j-1] > arr[j]){  
-                    //swap elements  
-                    temp = arr[j-1];  
-                    arr[j-1] = arr[j];  
-                    arr[j] = temp;  
+                if(arreglo[j-1] > arreglo[j]){  
+                    temp = arreglo[j-1];  
+                    arreglo[j-1] = arreglo[j];  
+                    arreglo[j] = temp;  
                 }             
             }  
         } 
-        return arr; 
+        return arreglo; 
     }
 }
